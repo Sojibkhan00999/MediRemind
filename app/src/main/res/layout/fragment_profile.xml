@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- App Header Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/accent_purple">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/appIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/profile"
+                    android:background="@drawable/circle_background_white"
+                    android:padding="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:scaleType="centerInside"
+                    app:tint="@color/accent_purple" />
+
+                <TextView
+                    android:id="@+id/appTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MediRemind"
+                    android:textStyle="bold"
+                    android:textSize="28sp"
+                    android:textColor="@color/text_white"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/appVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="সংস্করণ ১.০ • আপনার স্বাস্থ্য সহায়ক"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_blue_light"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Statistics Grid -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:weightSum="3">
+
+            <!-- Total Reminders -->
+            <androidx.cardview.widget.CardView
+                style="@style/MediCard"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="@color/secondary_green_light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/totalRemindersCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০"
+                        android:textColor="@color/secondary_green_dark"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="মোট"
+                        android:textColor="@color/secondary_green_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Today's Reminders -->
+            <androidx.cardview.widget.CardView
+                style="@style/MediCard"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:cardBackgroundColor="@color/accent_orange">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/todayRemindersCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০"
+                        android:textColor="@color/text_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="আজকের"
+                        android:textColor="@color/text_white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Upcoming Reminders -->
+            <androidx.cardview.widget.CardView
+                style="@style/MediCard"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="@color/primary_blue">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/upcomingRemindersCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০"
+                        android:textColor="@color/text_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="আসন্ন"
+                        android:textColor="@color/text_white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Statistics Details Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/MediTextSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📊 বিস্তারিত পরিসংখ্যান"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/primary_blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        style="@style/MediTextBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="মোট রিমাইন্ডার:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/totalReminders"
+                        style="@style/MediTextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০টি"
+                        android:textColor="@color/secondary_green"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        style="@style/MediTextBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="আজকের রিমাইন্ডার:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/todayReminders"
+                        style="@style/MediTextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০টি"
+                        android:textColor="@color/accent_orange"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/MediTextBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="আসন্ন রিমাইন্ডার:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/upcomingReminders"
+                        style="@style/MediTextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০টি"
+                        android:textColor="@color/primary_blue"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Actions Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/MediTextSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️ কার্যক্রম"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/accent_purple" />
+
+                <Button
+                    android:id="@+id/btnMyReminders"
+                    style="@style/MediButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="আমার সব রিমাইন্ডার দেখুন"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@drawable/outline_account_circle_24"
+                    android:drawablePadding="12dp"
+                    app:drawableTint="@color/text_white" />
+
+                <Button
+                    android:id="@+id/btnClearAllReminders"
+                    style="@style/MediButtonWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="সব রিমাইন্ডার মুছে ফেলুন"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@drawable/outline_add_alert_24"
+                    android:drawablePadding="12dp"
+                    app:drawableTint="@color/text_white" />
+
+                <Button
+                    android:id="@+id/btnAbout"
+                    style="@style/MediButtonSecondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="অ্যাপ সম্পর্কে জানুন"
+                    android:drawableStart="@drawable/home"
+                    android:drawablePadding="12dp"
+                    app:drawableTint="@color/primary_blue" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

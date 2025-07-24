@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary_blue"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <!-- Alarm Icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_medication"
+        android:tint="@color/text_white"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔔 ওষুধ খাওয়ার সময়!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_white"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Medicine Info Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/reminder_item_background"
+        android:padding="24dp"
+        android:layout_marginBottom="32dp">
+
+        <!-- Medicine Name -->
+        <TextView
+            android:id="@+id/tv_medicine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="প্যারাসিটামল"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_blue"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Dose -->
+        <TextView
+            android:id="@+id/tv_dose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ডোজ: ১ টি"
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Meal -->
+        <TextView
+            android:id="@+id/tv_meal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="খাবারের পরে"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Taken Button -->
+        <Button
+            android:id="@+id/btn_taken"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="✓ নিয়েছি"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:background="@drawable/action_button_background"
+            android:backgroundTint="@color/success"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Snooze Button -->
+        <Button
+            android:id="@+id/btn_snooze"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="⏰ ৫ মিনিট পরে"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:background="@drawable/action_button_background"
+            android:backgroundTint="@color/warning"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Dismiss Button -->
+        <Button
+            android:id="@+id/btn_dismiss"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="✕ বাতিল"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:background="@drawable/action_button_background"
+            android:backgroundTint="@color/error" />
+
+    </LinearLayout>
+
+</LinearLayout>

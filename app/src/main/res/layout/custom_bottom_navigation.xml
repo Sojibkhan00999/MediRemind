@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bottom_nav_background"
+    android:elevation="12dp"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <!-- Home Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_home"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_home_filled"
+            app:backgroundTint="@color/background_white"
+            app:tint="@color/text_secondary"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="32dp" />
+
+    </LinearLayout>
+
+    <!-- Reminder Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_reminder"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_medication"
+            app:backgroundTint="@color/background_white"
+            app:tint="@color/text_secondary"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="32dp" />
+
+    </LinearLayout>
+
+    <!-- Report Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_report"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_analytics"
+            app:backgroundTint="@color/background_white"
+            app:tint="@color/text_secondary"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="32dp" />
+
+    </LinearLayout>
+
+    <!-- Profile Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_profile"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_profile_filled"
+            app:backgroundTint="@color/background_white"
+            app:tint="@color/text_secondary"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="32dp" />
+
+    </LinearLayout>
+
+    <!-- Settings Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_settings"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_settings"
+            app:backgroundTint="@color/background_white"
+            app:tint="@color/text_secondary"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="32dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

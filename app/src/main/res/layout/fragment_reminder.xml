@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/secondary_green">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/outline_add_alert_24"
+                    app:tint="@color/text_white"
+                    android:layout_marginEnd="16dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="নতুন রিমাইন্ডার"
+                        android:textColor="@color/text_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="আপনার ওষুধের তথ্য যোগ করুন"
+                        android:textColor="@color/secondary_green_light"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Medicine Information Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/MediTextSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💊 ওষুধের তথ্য"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/primary_blue" />
+
+                <!-- Medicine Name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMedicineName"
+                    style="@style/MediTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ওষুধের নাম"
+                    app:startIconDrawable="@drawable/outline_add_alert_24"
+                    app:startIconTint="@color/primary_blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMedicineName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Medicine Dose -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDose"
+                    style="@style/MediTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ডোজ (যেমন: ১ টি, ২ চামচ)"
+                    app:startIconDrawable="@drawable/profile"
+                    app:startIconTint="@color/secondary_green">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Timing Information Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/MediTextSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⏰ সময়ের তথ্য"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/accent_orange" />
+
+                <!-- Time Selection -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MediTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:hint="সময় নির্বাচন করুন"
+                        app:startIconDrawable="@drawable/home"
+                        app:startIconTint="@color/accent_orange">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:textSize="16sp"
+                            android:hint="০০:০০" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnSelectTime"
+                        style="@style/MediButtonSecondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        android:text="সময়"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- Meal Time Selection -->
+                <TextView
+                    style="@style/MediTextBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="খাবারের সময়:"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rgMealTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbBeforeMeal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="খাবার আগে"
+                        android:textSize="14sp"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/rbAfterMeal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="খাবার পরে"
+                        android:textSize="14sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Frequency Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/MediCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/MediTextSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔄 কত ঘন ঘন"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/accent_purple" />
+
+                <RadioGroup
+                    android:id="@+id/rgFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rbDaily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="প্রতিদিন"
+                        android:textSize="16sp"
+                        android:padding="12dp"
+                        android:checked="true"
+                        android:background="@drawable/radio_button_background"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOnce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="শুধুমাত্র একবার"
+                        android:textSize="16sp"
+                        android:padding="12dp"
+                        android:background="@drawable/radio_button_background" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="100dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/MediButtonSecondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="বাতিল"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnSaveReminder"
+                style="@style/MediButtonSuccess"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="সংরক্ষণ করুন"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
