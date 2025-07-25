@@ -19,13 +19,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:padding="16dp"
             android:gravity="center_vertical">
 
             <!-- Medicine Icon with Color -->
             <LinearLayout
-                android:id="@+id/medicineIconContainer"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:background="@drawable/medicine_icon_background"
@@ -49,7 +49,6 @@
 
                 <!-- Medicine Name -->
                 <TextView
-                    android:id="@+id/medicineName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Napa Extra"
@@ -69,7 +68,6 @@
                     android:layout_marginBottom="8dp">
 
                     <TextView
-                        android:id="@+id/medicineDose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="১ টি"
@@ -82,7 +80,6 @@
                         tools:text="১ টি" />
 
                     <TextView
-                        android:id="@+id/mealTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="খাবার পরে"
@@ -110,7 +107,6 @@
                         android:layout_marginEnd="6dp" />
 
                     <TextView
-                        android:id="@+id/medicineTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="08:00 AM"
@@ -121,7 +117,6 @@
                         tools:text="08:00 AM" />
 
                     <TextView
-                        android:id="@+id/medicineFrequency"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="প্রতিদিন"
@@ -168,7 +163,6 @@
 
         <!-- Status Indicator -->
         <View
-            android:id="@+id/statusIndicator"
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:background="@color/secondary_green" />

@@ -44,7 +44,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/reminderCountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="মোট ০টি রিমাইন্ডার"
@@ -86,7 +85,6 @@
 
         <!-- Empty State -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/emptyStateCard"
             style="@style/MediCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,7 +128,6 @@
                     android:layout_marginBottom="24dp" />
 
                 <Button
-                    android:id="@+id/btnAddFirstReminder"
                     style="@style/MediButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

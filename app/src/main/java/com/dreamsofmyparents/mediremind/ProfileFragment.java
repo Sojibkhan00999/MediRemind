@@ -20,7 +20,6 @@ public class ProfileFragment extends Fragment {
     private TextView totalReminders;
     private TextView todayReminders;
     private TextView upcomingReminders;
-    private ImageView appIcon;
     private ReminderPreferenceManager reminderManager;
 
     @Nullable
@@ -34,7 +33,7 @@ public class ProfileFragment extends Fragment {
         totalReminders = view.findViewById(R.id.totalReminders);
         todayReminders = view.findViewById(R.id.todayReminders);
         upcomingReminders = view.findViewById(R.id.upcomingReminders);
-        appIcon = view.findViewById(R.id.appIcon);
+        ImageView appIcon = view.findViewById(R.id.appIcon);
         Button btnMyReminders = view.findViewById(R.id.btnMyReminders);
         Button btnClearAllReminders = view.findViewById(R.id.btnClearAllReminders);
         Button btnAbout = view.findViewById(R.id.btnAbout);
@@ -57,17 +56,13 @@ public class ProfileFragment extends Fragment {
             startActivity(intent);
         });
 
-        btnClearAllReminders.setOnClickListener(v -> {
-            new androidx.appcompat.app.AlertDialog.Builder(context).setTitle("সব রিমাইন্ডার মুছুন").setMessage("আপনি কি সব রিমাইন্ডার মুছে ফেলতে চান? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।").setPositiveButton("হ্যাঁ", (dialog, which) -> {
-                reminderManager.clearAllReminders();
-                loadReminderStats();
-                Toast.makeText(context, "সব রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
-            }).setNegativeButton("না", null).show();
-        });
+        btnClearAllReminders.setOnClickListener(v -> new androidx.appcompat.app.AlertDialog.Builder(context).setTitle("সব রিমাইন্ডার মুছুন").setMessage("আপনি কি সব রিমাইন্ডার মুছে ফেলতে চান? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।").setPositiveButton("হ্যাঁ", (dialog, which) -> {
+            reminderManager.clearAllReminders();
+            loadReminderStats();
+            Toast.makeText(context, "সব রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+        }).setNegativeButton("না", null).show());
 
-        btnAbout.setOnClickListener(v -> {
-            new androidx.appcompat.app.AlertDialog.Builder(context).setTitle("MediRemind সম্পর্কে").setMessage("MediRemind একটি ওষুধের রিমাইন্ডার অ্যাপ যা আপনাকে সময়মতো ওষুধ খেতে সাহায্য করে।\n\n" + "বৈশিষ্ট্যসমূহ:\n" + "• ওষুধের রিমাইন্ডার সেট করুন\n" + "• বিভিন্ন ধরনের ওষুধ সাপোর্ট\n" + "• সময়মতো নোটিফিকেশন\n" + "• সহজ ব্যবহার\n\n" + "সংস্করণ: ১.০\n" + "তৈরি করেছেন: MediRemind Team").setPositiveButton("ঠিক আছে", null).show();
-        });
+        btnAbout.setOnClickListener(v -> new androidx.appcompat.app.AlertDialog.Builder(context).setTitle("MediRemind সম্পর্কে").setMessage("MediRemind একটি ওষুধের রিমাইন্ডার অ্যাপ যা আপনাকে সময়মতো ওষুধ খেতে সাহায্য করে।\n\n" + "বৈশিষ্ট্যসমূহ:\n" + "• ওষুধের রিমাইন্ডার সেট করুন\n" + "• বিভিন্ন ধরনের ওষুধ সাপোর্ট\n" + "• সময়মতো নোটিফিকেশন\n" + "• সহজ ব্যবহার\n\n" + "সংস্করণ: ১.০\n" + "তৈরি করেছেন: MediRemind Team").setPositiveButton("ঠিক আছে", null).show());
 
         return view;
     }

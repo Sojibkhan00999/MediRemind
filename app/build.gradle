@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.dreamsofmyparents.mediremind"
-        targetSdk compileSdk
+        targetSdk getCompileSdk()
         minSdk 24
         versionCode 1
         versionName "1.0"

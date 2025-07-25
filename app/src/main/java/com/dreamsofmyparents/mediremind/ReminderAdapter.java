@@ -64,8 +64,11 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, time, dose, type;
-        ImageButton btnDelete;
+        final TextView name;
+        final TextView time;
+        final TextView dose;
+        final TextView type;
+        final ImageButton btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

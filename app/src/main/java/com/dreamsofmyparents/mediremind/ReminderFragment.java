@@ -92,6 +92,17 @@ public class ReminderFragment extends Fragment {
         }
 
         // Get meal time
+        ReminderModel reminder = getReminderModel(medicineName, dose, time);
+
+        // Save reminder
+        reminderManager.addReminder(reminder);
+
+        Toast.makeText(requireContext(), "রিমাইন্ডার সংরক্ষিত হয়েছে!", Toast.LENGTH_SHORT).show();
+        clearForm();
+    }
+
+    @NonNull
+    private ReminderModel getReminderModel(String medicineName, String dose, String time) {
         String mealTime = "খাবার আগে"; // default
         int selectedMealId = rgMealTime.getCheckedRadioButtonId();
         if (selectedMealId == R.id.rbAfterMeal) {
@@ -106,13 +117,7 @@ public class ReminderFragment extends Fragment {
         }
 
         // Create reminder model
-        ReminderModel reminder = new ReminderModel(0, medicineName, dose, time, frequency, mealTime);
-
-        // Save reminder
-        reminderManager.addReminder(reminder);
-
-        Toast.makeText(requireContext(), "রিমাইন্ডার সংরক্ষিত হয়েছে!", Toast.LENGTH_SHORT).show();
-        clearForm();
+        return new ReminderModel(0, medicineName, dose, time, frequency, mealTime);
     }
 
     private void clearForm() {

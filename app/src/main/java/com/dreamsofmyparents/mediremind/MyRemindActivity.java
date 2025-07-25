@@ -100,13 +100,11 @@ public class MyRemindActivity extends AppCompatActivity {
             // Set frequency
             holder.type.setText(reminder.frequency.equals("daily") ? "প্রতিদিন" : "একবার");
 
-            holder.btnDelete.setOnClickListener(v -> {
-                new AlertDialog.Builder(context).setTitle("রিমাইন্ডার মুছুন").setMessage("এই রিমাইন্ডারটি মুছে ফেলতে চান?").setPositiveButton("হ্যাঁ", (dialog, which) -> {
-                    reminderManager.deleteReminder(reminder.id);
-                    ((MyRemindActivity) context).refreshList();
-                    Toast.makeText(context, "রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
-                }).setNegativeButton("না", null).show();
-            });
+            holder.btnDelete.setOnClickListener(v -> new AlertDialog.Builder(context).setTitle("রিমাইন্ডার মুছুন").setMessage("এই রিমাইন্ডারটি মুছে ফেলতে চান?").setPositiveButton("হ্যাঁ", (dialog, which) -> {
+                reminderManager.deleteReminder(reminder.id);
+                ((MyRemindActivity) context).refreshList();
+                Toast.makeText(context, "রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+            }).setNegativeButton("না", null).show());
         }
 
         @Override
@@ -115,8 +113,12 @@ public class MyRemindActivity extends AppCompatActivity {
         }
 
         public class ReminderViewHolder extends RecyclerView.ViewHolder {
-            TextView name, dose, time, type, meal;
-            ImageButton btnDelete;
+            final TextView name;
+            final TextView dose;
+            final TextView time;
+            final TextView type;
+            final TextView meal;
+            final ImageButton btnDelete;
 
             public ReminderViewHolder(@NonNull View itemView) {
                 super(itemView);

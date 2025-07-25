@@ -9,14 +9,12 @@
 
     <!-- App Bar Layout -->
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="8dp"
         app:elevation="8dp">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
             style="@style/MediToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -42,8 +40,6 @@
     </androidx.core.widget.NestedScrollView>
 
     <!-- Custom Bottom Navigation -->
-    <include
-        android:id="@+id/custom_bottom_navigation"
-        layout="@layout/custom_bottom_navigation" />
+    <include layout="@layout/custom_bottom_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

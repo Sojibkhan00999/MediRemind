@@ -186,13 +186,13 @@ public class AlarmActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         stopAlarmSoundAndVibration();
 
         // Release wake lock
         if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
+        super.onDestroy();
     }
 
 }

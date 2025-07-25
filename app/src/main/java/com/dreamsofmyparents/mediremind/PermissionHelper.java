@@ -80,9 +80,7 @@ public class PermissionHelper {
 
     private void requestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            new AlertDialog.Builder(activity).setTitle("নোটিফিকেশন অনুমতি প্রয়োজন").setMessage("রিমাইন্ডার কাজ করার জন্য নোটিফিকেশন অনুমতি দিন।").setPositiveButton("অনুমতি দিন", (dialog, which) -> {
-                ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_CODE);
-            }).setNegativeButton("বাতিল", (dialog, which) -> {
+            new AlertDialog.Builder(activity).setTitle("নোটিফিকেশন অনুমতি প্রয়োজন").setMessage("রিমাইন্ডার কাজ করার জন্য নোটিফিকেশন অনুমতি দিন।").setPositiveButton("অনুমতি দিন", (dialog, which) -> ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_CODE)).setNegativeButton("বাতিল", (dialog, which) -> {
                 if (callback != null) callback.onPermissionsDenied();
             }).show();
         }

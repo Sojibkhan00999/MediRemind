@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_light"
@@ -35,7 +34,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/greetingText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="স্বাগতম!"
@@ -91,7 +89,6 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/totalRemindersCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="০"
@@ -129,7 +126,6 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/todayRemindersCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="০"
@@ -285,8 +281,8 @@
                     android:layout_height="wrap_content"
                     android:text="দ্রুত কাজ"
                     android:layout_marginBottom="16dp"
-                    android:drawableStart="@drawable/home"
                     android:drawablePadding="8dp"
+                    app:drawableStartCompat="@drawable/home"
                     app:drawableTint="@color/accent_purple" />
 
                 <LinearLayout

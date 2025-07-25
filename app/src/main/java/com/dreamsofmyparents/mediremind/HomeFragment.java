@@ -168,13 +168,13 @@ public class HomeFragment extends Fragment {
         TextView medicineView = new TextView(context);
         medicineView.setText(reminder.medicine);
         medicineView.setTextSize(16);
-        medicineView.setTextColor(getResources().getColor(android.R.color.black));
+        medicineView.setTextColor(ContextCompat.getColor(context, android.R.color.black));
         medicineView.setTypeface(null, android.graphics.Typeface.BOLD);
 
         TextView doseView = new TextView(context);
         doseView.setText(reminder.dose + " • " + reminder.meal);
         doseView.setTextSize(14);
-        doseView.setTextColor(getResources().getColor(android.R.color.darker_gray));
+        doseView.setTextColor(ContextCompat.getColor(context, android.R.color.darker_gray));
 
         infoLayout.addView(medicineView);
         infoLayout.addView(doseView);

@@ -12,17 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 public class SettingsFragment extends Fragment {
 
     private SharedPreferences sharedPreferences;
-    private Switch darkModeSwitch, vibrationSwitch;
+    private SwitchCompat darkModeSwitch, vibrationSwitch;
     private LinearLayout languageOption, privacyPolicyOption, developerInfoOption, otherAppsOption;
     private LinearLayout alarmToneOption, snoozeDurationOption, testAlarmOption;
     private TextView selectedToneText, snoozeDurationText;
@@ -62,9 +62,7 @@ public class SettingsFragment extends Fragment {
 
     private void setupClickListeners() {
         // Alarm Tone Selection
-        alarmToneOption.setOnClickListener(v -> {
-            showAlarmToneSelector();
-        });
+        alarmToneOption.setOnClickListener(v -> showAlarmToneSelector());
 
         // Vibration Toggle
         vibrationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -97,14 +95,10 @@ public class SettingsFragment extends Fragment {
         });
 
         // Snooze Duration
-        snoozeDurationOption.setOnClickListener(v -> {
-            showSnoozeDurationSelector();
-        });
+        snoozeDurationOption.setOnClickListener(v -> showSnoozeDurationSelector());
 
         // Test Alarm - Removed for production
-        testAlarmOption.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "টেস্ট এলার্ম বৈশিষ্ট্য প্রোডাকশনে উপলব্ধ নয়", Toast.LENGTH_SHORT).show();
-        });
+        testAlarmOption.setOnClickListener(v -> Toast.makeText(getContext(), "টেস্ট এলার্ম বৈশিষ্ট্য প্রোডাকশনে উপলব্ধ নয়", Toast.LENGTH_SHORT).show());
 
         // Dark Mode Toggle
         darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -122,9 +116,7 @@ public class SettingsFragment extends Fragment {
         });
 
         // Language Change
-        languageOption.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "ভাষা পরিবর্তন বৈশিষ্ট্য শীঘ্রই আসছে", Toast.LENGTH_SHORT).show();
-        });
+        languageOption.setOnClickListener(v -> Toast.makeText(getContext(), "ভাষা পরিবর্তন বৈশিষ্ট্য শীঘ্রই আসছে", Toast.LENGTH_SHORT).show());
 
         // Privacy Policy
         privacyPolicyOption.setOnClickListener(v -> {
@@ -137,9 +129,7 @@ public class SettingsFragment extends Fragment {
         });
 
         // Developer Info
-        developerInfoOption.setOnClickListener(v -> {
-            showDeveloperInfo();
-        });
+        developerInfoOption.setOnClickListener(v -> showDeveloperInfo());
 
         // Other Apps
         otherAppsOption.setOnClickListener(v -> {
