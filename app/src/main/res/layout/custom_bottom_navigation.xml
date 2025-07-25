@@ -5,6 +5,7 @@
     android:layout_height="80dp"
     android:layout_gravity="bottom"
     android:background="@drawable/bottom_nav_background"
+    android:baselineAligned="false"
     android:elevation="12dp"
     android:orientation="horizontal"
     android:paddingTop="8dp"

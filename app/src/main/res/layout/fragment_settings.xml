@@ -15,42 +15,42 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="সেটিংস"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:layout_marginBottom="24dp" />
+            android:text="সেটিংস"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <!-- Alarm Settings Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="🔔 এলার্ম সেটিংস"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="@color/primary_blue"
-            android:layout_marginBottom="16dp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <!-- Alarm Tone Selection -->
         <LinearLayout
             android:id="@+id/option_alarm_tone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_medication"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_medication"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -63,25 +63,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="এলার্ম টোন"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/text_selected_tone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ডিফল্ট টোন"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -90,17 +90,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical">
+            android:background="@drawable/reminder_item_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_analytics"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_analytics"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -113,20 +113,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ভাইব্রেশন"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="এলার্মের সাথে ভাইব্রেশন চালু করুন"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch_vibration"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
@@ -139,23 +139,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/reminder_item_background"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="12dp">
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_settings"
                     android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_settings"
                     app:tint="@color/primary_blue" />
 
                 <LinearLayout
@@ -168,16 +168,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="এলার্ম ভলিউম"
+                        android:textColor="@color/text_primary"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="এলার্মের আওয়াজের মাত্রা নির্ধারণ করুন"
-                        android:textSize="12sp"
-                        android:textColor="@color/text_secondary" />
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -199,20 +199,20 @@
             android:id="@+id/option_snooze_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_profile_filled"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_profile_filled"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -225,25 +225,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="স্নুজ সময়"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/text_snooze_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="৫ মিনিট"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -253,20 +253,20 @@
             android:id="@+id/option_test_alarm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_medication"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_medication"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -279,24 +279,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🧪 টেস্ট এলার্ম"
+                    android:textColor="@color/primary_blue"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary_blue" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="১ মিনিট পরে টেস্ট এলার্ম বাজবে"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -305,28 +305,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⚙️ অ্যাপ সেটিংস"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_blue"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:text="⚙️ অ্যাপ সেটিংস"
+            android:textColor="@color/primary_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <!-- Dark Mode Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical">
+            android:background="@drawable/reminder_item_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_settings"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_settings"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -339,20 +339,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ডার্ক মোড"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="রাতের জন্য অন্ধকার থিম"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch_dark_mode"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
@@ -366,20 +366,20 @@
             android:id="@+id/option_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_analytics"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_analytics"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -392,24 +392,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ভাষা পরিবর্তন"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="বাংলা / English"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -419,20 +419,20 @@
             android:id="@+id/option_privacy_policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_profile_filled"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_profile_filled"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -445,24 +445,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="নীতিমালা"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="গোপনীয়তা নীতি ও শর্তাবলী"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -472,20 +472,20 @@
             android:id="@+id/option_developer_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_medication"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_medication"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -498,24 +498,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ডেভেলপার পরিচিতি"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="অ্যাপ তৈরিকারী সম্পর্কে জানুন"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -525,20 +525,20 @@
             android:id="@+id/option_other_apps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical"
+            android:background="@drawable/reminder_item_background"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_home_filled"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/primary_blue" />
 
             <LinearLayout
@@ -551,24 +551,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="অন্যান্য অ্যাপ"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="আমাদের আরো অ্যাপ দেখুন"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_home_filled"
                 android:rotation="180"
+                android:src="@drawable/ic_home_filled"
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
@@ -577,17 +577,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reminder_item_background"
-            android:orientation="horizontal"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
-            android:gravity="center_vertical">
+            android:background="@drawable/reminder_item_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_settings"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_settings"
                 app:tint="@color/text_secondary" />
 
             <LinearLayout
@@ -600,16 +600,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="অ্যাপ ভার্সন"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MediRemind v1.0.0"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -619,12 +619,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MediRemind - আপনার ওষুধের সঙ্গী\n© ২০২৫ সকল অধিকার সংরক্ষিত"
-            android:textSize="12sp"
-            android:textColor="@color/text_secondary"
-            android:gravity="center"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="MediRemind - আপনার ওষুধের সঙ্গী\n© ২০২৫ সকল অধিকার সংরক্ষিত"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

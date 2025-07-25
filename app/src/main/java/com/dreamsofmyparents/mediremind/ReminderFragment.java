@@ -29,10 +29,10 @@ public class ReminderFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_reminder, container, false);
-        
+
         initViews(view);
         setupListeners();
-        
+
         return view;
     }
 
@@ -40,21 +40,21 @@ public class ReminderFragment extends Fragment {
         etMedicineName = view.findViewById(R.id.etMedicineName);
         etDose = view.findViewById(R.id.etDose);
         etTime = view.findViewById(R.id.etTime);
-        
+
         rgMealTime = view.findViewById(R.id.rgMealTime);
         rgFrequency = view.findViewById(R.id.rgFrequency);
-        
+
         btnSelectTime = view.findViewById(R.id.btnSelectTime);
         btnSaveReminder = view.findViewById(R.id.btnSaveReminder);
         btnCancel = view.findViewById(R.id.btnCancel);
-        
+
         reminderManager = ReminderPreferenceManager.getInstance(requireContext());
     }
 
     private void setupListeners() {
         btnSelectTime.setOnClickListener(v -> showTimePicker());
         etTime.setOnClickListener(v -> showTimePicker());
-        
+
         btnSaveReminder.setOnClickListener(v -> saveReminder());
         btnCancel.setOnClickListener(v -> clearForm());
     }
@@ -64,14 +64,10 @@ public class ReminderFragment extends Fragment {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-            requireContext(),
-            (view, selectedHour, selectedMinute) -> {
-                String time = String.format(Locale.getDefault(), "%02d:%02d", selectedHour, selectedMinute);
-                etTime.setText(time);
-            },
-            hour, minute, true
-        );
+        TimePickerDialog timePickerDialog = new TimePickerDialog(requireContext(), (view, selectedHour, selectedMinute) -> {
+            String time = String.format(Locale.getDefault(), "%02d:%02d", selectedHour, selectedMinute);
+            etTime.setText(time);
+        }, hour, minute, true);
         timePickerDialog.show();
     }
 
@@ -96,6 +92,17 @@ public class ReminderFragment extends Fragment {
         }
 
         // Get meal time
+        ReminderModel reminder = getReminderModel(medicineName, dose, time);
+
+        // Save reminder
+        reminderManager.addReminder(reminder);
+
+        Toast.makeText(requireContext(), "রিমাইন্ডার সংরক্ষিত হয়েছে!", Toast.LENGTH_SHORT).show();
+        clearForm();
+    }
+
+    @NonNull
+    private ReminderModel getReminderModel(String medicineName, String dose, String time) {
         String mealTime = "খাবার আগে"; // default
         int selectedMealId = rgMealTime.getCheckedRadioButtonId();
         if (selectedMealId == R.id.rbAfterMeal) {
@@ -110,13 +117,7 @@ public class ReminderFragment extends Fragment {
         }
 
         // Create reminder model
-        ReminderModel reminder = new ReminderModel(0, medicineName, dose, time, frequency, mealTime);
-
-        // Save reminder
-        reminderManager.addReminder(reminder);
-
-        Toast.makeText(requireContext(), "রিমাইন্ডার সংরক্ষিত হয়েছে!", Toast.LENGTH_SHORT).show();
-        clearForm();
+        return new ReminderModel(0, medicineName, dose, time, frequency, mealTime);
     }
 
     private void clearForm() {

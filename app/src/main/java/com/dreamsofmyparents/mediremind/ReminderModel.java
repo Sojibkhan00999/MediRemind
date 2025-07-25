@@ -2,13 +2,13 @@ package com.dreamsofmyparents.mediremind;
 
 public class ReminderModel {
     public int id;
-    public String name;
-    public String medicine; // Medicine name
-    public String dose;
-    public String time;
-    public String type; // "once" or "daily"
-    public String frequency; // "once" or "daily" - for compatibility
-    public String meal; // "খাবার আগে" or "খাবার পরে"
+    public final String name;
+    public final String medicine; // Medicine name
+    public final String dose;
+    public final String time;
+    public final String type; // "once" or "daily"
+    public final String frequency; // "once" or "daily" - for compatibility
+    public final String meal; // "খাবার আগে" or "খাবার পরে"
 
     public ReminderModel(int id, String name, String dose, String time, String type) {
         this.id = id;
@@ -20,7 +20,7 @@ public class ReminderModel {
         this.frequency = type; // Set frequency same as type for compatibility
         this.meal = "খাবার পরে"; // Default meal timing
     }
-    
+
     // Constructor with all fields
     public ReminderModel(int id, String medicine, String dose, String time, String frequency, String meal) {
         this.id = id;

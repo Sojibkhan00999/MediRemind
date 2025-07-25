@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme -->
     <style name="Theme.MediRemind" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color -->
@@ -58,24 +58,11 @@
         <item name="backgroundTint">@color/accent_orange</item>
     </style>
 
-    <style name="MediButtonDanger" parent="MediButton">
-        <item name="backgroundTint">@color/accent_red</item>
-    </style>
-
     <!-- Card Styles -->
     <style name="MediCard" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">6dp</item>
         <item name="cardBackgroundColor">@color/background_white</item>
-        <item name="android:layout_margin">8dp</item>
-    </style>
-
-    <style name="MediCardFlat" parent="Widget.Material3.CardView.Filled">
-        <item name="cardCornerRadius">16dp</item>
-        <item name="cardElevation">0dp</item>
-        <item name="cardBackgroundColor">@color/background_white</item>
-        <item name="strokeColor">@color/border_light</item>
-        <item name="strokeWidth">1dp</item>
         <item name="android:layout_margin">8dp</item>
     </style>
 
@@ -121,24 +108,8 @@
     </style>
 
     <!-- Bottom Navigation Style -->
-    <style name="MediBottomNavigation" parent="Widget.Material3.BottomNavigationView">
-        <item name="android:background">@drawable/bottom_nav_background</item>
-        <item name="itemIconTint">@color/primary_blue</item>
-        <item name="itemTextColor">@color/primary_blue</item>
-        <item name="android:elevation">12dp</item>
-    </style>
 
     <!-- Bottom Navigation Text Styles -->
-    <style name="BottomNavTextActive" parent="TextAppearance.Material3.LabelSmall">
-        <item name="android:textColor">@color/primary_blue</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="BottomNavTextInactive" parent="TextAppearance.Material3.LabelSmall">
-        <item name="android:textColor">@color/text_secondary</item>
-        <item name="android:textSize">11sp</item>
-    </style>
 
     <!-- Toolbar Style -->
     <style name="MediToolbar" parent="Widget.Material3.Toolbar">
