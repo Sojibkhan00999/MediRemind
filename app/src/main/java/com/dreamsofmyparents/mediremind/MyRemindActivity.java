@@ -20,9 +20,7 @@ import java.util.List;
 public class MyRemindActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ReminderAdapter adapter;
     private ReminderPreferenceManager reminderManager;
-    private List<ReminderModel> reminderList;
     private TextView emptyStateText;
 
     @Override
@@ -32,7 +30,7 @@ public class MyRemindActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         emptyStateText = findViewById(R.id.emptyStateText);
-        
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         reminderManager = ReminderPreferenceManager.getInstance(this);
 
@@ -46,8 +44,8 @@ public class MyRemindActivity extends AppCompatActivity {
     }
 
     private void loadReminders() {
-        reminderList = reminderManager.getAllReminders();
-        
+        List<ReminderModel> reminderList = reminderManager.getAllReminders();
+
         if (reminderList.isEmpty()) {
             recyclerView.setVisibility(View.GONE);
             if (emptyStateText != null) {
@@ -59,8 +57,8 @@ public class MyRemindActivity extends AppCompatActivity {
             if (emptyStateText != null) {
                 emptyStateText.setVisibility(View.GONE);
             }
-            
-            adapter = new ReminderAdapter(this, reminderList);
+
+            ReminderAdapter adapter = new ReminderAdapter(this, reminderList);
             recyclerView.setAdapter(adapter);
         }
     }
@@ -70,8 +68,8 @@ public class MyRemindActivity extends AppCompatActivity {
     }
 
     public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
-        private Context context;
-        private List<ReminderModel> reminderList;
+        private final Context context;
+        private final List<ReminderModel> reminderList;
 
         public ReminderAdapter(Context context, List<ReminderModel> reminderList) {
             this.context = context;
@@ -88,31 +86,26 @@ public class MyRemindActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ReminderViewHolder holder, int position) {
             ReminderModel reminder = reminderList.get(position);
-            
+
             // Set medicine name and type
             holder.name.setText(reminder.medicine + " (" + reminder.type + ")");
-            
+
             // Set dose
             holder.dose.setText("ডোজ: " + reminder.dose);
-            
+
             // Set meal and time
             holder.meal.setText(reminder.meal);
             holder.time.setText(reminder.time);
-            
+
             // Set frequency
             holder.type.setText(reminder.frequency.equals("daily") ? "প্রতিদিন" : "একবার");
 
             holder.btnDelete.setOnClickListener(v -> {
-                new AlertDialog.Builder(context)
-                        .setTitle("রিমাইন্ডার মুছুন")
-                        .setMessage("এই রিমাইন্ডারটি মুছে ফেলতে চান?")
-                        .setPositiveButton("হ্যাঁ", (dialog, which) -> {
-                            reminderManager.deleteReminder(reminder.id);
-                            ((MyRemindActivity) context).refreshList();
-                            Toast.makeText(context, "রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
-                        })
-                        .setNegativeButton("না", null)
-                        .show();
+                new AlertDialog.Builder(context).setTitle("রিমাইন্ডার মুছুন").setMessage("এই রিমাইন্ডারটি মুছে ফেলতে চান?").setPositiveButton("হ্যাঁ", (dialog, which) -> {
+                    reminderManager.deleteReminder(reminder.id);
+                    ((MyRemindActivity) context).refreshList();
+                    Toast.makeText(context, "রিমাইন্ডার মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+                }).setNegativeButton("না", null).show();
             });
         }
 

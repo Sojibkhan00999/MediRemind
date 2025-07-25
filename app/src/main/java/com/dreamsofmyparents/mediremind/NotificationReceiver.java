@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+
 import androidx.core.app.NotificationCompat;
 
 public class NotificationReceiver extends BroadcastReceiver {
@@ -30,13 +31,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         repeatingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, repeatingIntent, PendingIntent.FLAG_IMMUTABLE);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId)
-                .setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("ওষুধের সময় হয়েছে")
-                .setContentText("আপনার ওষুধ '" + name + "' খাওয়ার সময় হয়েছে")
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId).setContentIntent(pendingIntent).setSmallIcon(R.drawable.ic_launcher_foreground).setContentTitle("ওষুধের সময় হয়েছে").setContentText("আপনার ওষুধ '" + name + "' খাওয়ার সময় হয়েছে").setAutoCancel(true).setPriority(NotificationCompat.PRIORITY_HIGH);
 
         notificationManager.notify((int) System.currentTimeMillis(), builder.build());
     }

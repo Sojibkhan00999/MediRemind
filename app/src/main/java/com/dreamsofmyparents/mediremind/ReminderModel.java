@@ -20,7 +20,7 @@ public class ReminderModel {
         this.frequency = type; // Set frequency same as type for compatibility
         this.meal = "খাবার পরে"; // Default meal timing
     }
-    
+
     // Constructor with all fields
     public ReminderModel(int id, String medicine, String dose, String time, String frequency, String meal) {
         this.id = id;
